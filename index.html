@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKITO MIWA - 三輪亮人 公式サイト</title>
+
+    <meta name="robots" content="noindex,nofollow,noarchive">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Impact&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f6f6fa;
+            --main-color: #ff0033;
+            --dark-color: #111115;
+            --sub-text: #555565;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#e0e0e8 1.5px, transparent 0);
+            background-size: 32px 32px;
+            color: var(--dark-color);
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            position: relative;
+            background: #ffffff;
+            border-bottom: 6px solid var(--dark-color);
+        }
+
+        .header-bg-text {
+            position: absolute;
+            right: -2%;
+            bottom: -5%;
+            font-family: Impact, sans-serif;
+            font-size: 22vw;
+            line-height: 0.8;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0, 0, 0, 0.04);
+            font-weight: bold;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .tagline {
+            background: var(--dark-color);
+            color: #ffffff;
+            padding: 6px 16px;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            box-shadow: 4px 4px 0 var(--main-color);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--main-color);
+            font-family: Impact, sans-serif;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .intro-text {
+            max-width: 600px;
+            color: var(--dark-color);
+            font-size: 1.15rem;
+            font-weight: 500;
+            border-left: 4px solid var(--main-color);
+            padding-left: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 120px 10%;
+            position: relative;
+        }
+
+        .section-num {
+            font-family: Impact, sans-serif;
+            font-size: 6rem;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 40px;
+            left: 8%;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            padding-left: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border: 4px solid var(--dark-color);
+            box-shadow: 8px 8px 0 var(--dark-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--main-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: var(--main-color);
+            color: white;
+            display: inline-block;
+            padding: 2px 12px;
+            transform: skewX(-10deg);
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 12px;
+            color: var(--dark-color);
+            font-size: 1.05rem;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 8px;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .card ul li strong {
+            color: var(--main-color);
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+        .timeline {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 30px;
+            background: var(--card-bg);
+            margin-bottom: 30px;
+            border: 4px solid var(--dark-color);
+            box-shadow: 8px 8px 0 var(--dark-color);
+            position: relative;
+        }
+
+        .timeline-item:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--dark-color);
+        }
+
+        .timeline-badge {
+            background-color: var(--main-color);
+            color: white;
+            padding: 4px 14px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .timeline-item:nth-child(2) .timeline-badge {
+            background-color: var(--dark-color);
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p,
+        .manual-section p {
+            color: var(--sub-text);
+            font-weight: 500;
+        }
+
+        .manual-box {
+            background: var(--card-bg);
+            border: 4px solid var(--dark-color);
+            padding: 45px;
+            box-shadow: 10px 10px 0 var(--dark-color);
+        }
+
+        .manual-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+        }
+
+        .manual-section h4 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .manual-list li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .manual-list li::before {
+            content: "▶";
+            color: var(--main-color);
+            position: absolute;
+            left: 0;
+            top: 1px;
+        }
+
+        .btn-container {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .action-btn {
+            background-color: var(--main-color);
+            color: white;
+            padding: 18px 50px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 4px solid var(--dark-color);
+            box-shadow: 6px 6px 0 var(--dark-color);
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0 var(--dark-color);
+            background-color: #ffffff;
+            color: var(--dark-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-top: 4px solid var(--dark-color);
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .manual-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header,
+            section {
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            .tagline {
+                font-size: 0.85rem;
+            }
+
+            h1 span {
+                font-size: 1.35rem;
+            }
+
+            .section-title {
+                font-size: 2.1rem;
+                padding-left: 0;
+            }
+
+            .card,
+            .timeline-item,
+            .manual-box {
+                padding: 24px;
+                box-shadow: 6px 6px 0 var(--dark-color);
+            }
+
+            .action-btn {
+                width: 100%;
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-bg-text">AKITO MIWA</div>
+        <div class="tagline">現役大学生 兼 バ畜</div>
+        <h1>三輪 亮人<span>AKITO MIWA</span></h1>
+        <p class="intro-text">
+            高畠町に生息中。言葉遣いはちょっと荒めですが、実はかなり内気で寂しがり屋。
+            誰かに必要とされると全力で応えちゃうタイプです。
+        </p>
+    </header>
+
+    <section id="about">
+        <div class="section-num">01</div>
+        <h2 class="section-title">Profile & Favorites</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>基本情報</h3>
+                <ul>
+                    <li><strong>出生地:</strong> 山形県高畠町</li>
+                    <li><strong>誕生日:</strong> 12月6日</li>
+                    <li><strong>特殊能力:</strong> 初対面の人とでも普通に喋れる</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>偏愛・好きなもの</h3>
+                <ul>
+                    <li><strong>食物:</strong> すいとん</li>
+                    <li><strong>漫画:</strong> かぐや様は告らせたい</li>
+                    <li><strong>ゲーム:</strong> ペルソナシリーズ</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>最近の沼</h3>
+                <p>
+                    絶賛、<strong style="color: var(--main-color);">ペルソナシリーズの関連商品集め</strong>に熱中しています。
+                    部屋をグッズで埋めるのが目標。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="section-num">02</div>
+        <h2 class="section-title">Story & Now</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-badge">TURNING POINT</div>
+                <div class="timeline-title">高校時代・eスポーツ愛好会を創部</div>
+                <p>仲間と共に活動する楽しさを知った、人生の大きな分岐点。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">NOW DEVELOPING</div>
+                <div class="timeline-title">現在挑戦中のこと</div>
+                <p>独学でのアプリ開発と、登録販売者の資格勉強にダブルコミット中。一歩ずつ、できることを増やしています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="manual">
+        <div class="section-num">03</div>
+        <h2 class="section-title">User Manual</h2>
+        <div class="manual-box">
+            <div class="manual-grid">
+                <div class="manual-section">
+                    <h4>💡 こうされると喜びます</h4>
+                    <ul class="manual-list">
+                        <li>気軽に話しかけられること</li>
+                        <li>遊びの誘いはいつでも待ってます！</li>
+                        <li>「お前が必要だ」と言われること。これがバ畜の原動力！</li>
+                    </ul>
+                </div>
+                <div class="manual-section">
+                    <h4 style="color: var(--main-color);">⚠ リアルな悩みと中身</h4>
+                    <p>
+                        「自分に人間としての魅力がない」なんて悩むこともありますが、
+                        声をかけてもらえるだけでめちゃくちゃ喜びます。
+                        見た目や言葉遣いに反して、中身は超絶寂しがり屋な仕様となっております。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="mailto:your-email@example.com" class="action-btn">三輪にコンタクトする</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Akito Miwa. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
